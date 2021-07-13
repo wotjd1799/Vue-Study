@@ -29,7 +29,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px black;
   border-radius: 10px;
+  box-shadow: 0 0 5px #888;
 }
 </style>
