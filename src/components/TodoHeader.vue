@@ -1,8 +1,10 @@
 <template>
   <div class="wrapper">
     <div class="header">
-      <div class="week">{{week}},</div>
-      <div class="day">{{day}}th</div>
+      <div class="secondWrapper">
+        <div class="week">{{week}},</div>
+        <div class="day">{{day}}{{th}}</div>
+      </div>
       <div class="count">12 Tasks</div>
     </div>
     <div class="month">{{month}}</div>
@@ -17,13 +19,15 @@ export default {
     return {
       day:'',
       week:'',
-      month:''
+      month:'',
+      th:''
     }
   },
 
   created() { 
     this.getDay();
     this.getWeek();
+    this.getTh();
     this.getMonth();
   },
 
@@ -37,6 +41,20 @@ export default {
       let thisDay = new Date().getDay();
       let week = weekList[thisDay];
       this.week = week;
+    },
+    getTh: function() {
+      if (this.day == 1 || this.day == 21){
+        this.th = 'st'
+      }
+      else if (this.day == 2 || this.day == 22){
+        this.th = 'nd'
+      }
+      else if (this.day == 3 || this.day == 23){
+        this.th = 'rd'
+      }
+      else {
+        this.th = 'th'
+      }
     },
     getMonth: function() {
       let monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -58,6 +76,10 @@ export default {
   border-start-end-radius: 10px;
   background-color: rgba(245, 255, 245, 0.822);
 }
+.secondWrapper {
+  display: flex;
+  width: 230px;
+}
 .header {
   display: flex;
   padding-top: 40px;
@@ -76,8 +98,8 @@ export default {
 }
 .count {
   font-size: 20px;
-  margin-top: 10px;
-  margin-left: 150px;
+  margin-top: 20px;
+  margin-left: 180px;
   color: rgb(190, 210, 190)
 }
 .month {
