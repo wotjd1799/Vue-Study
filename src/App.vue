@@ -14,8 +14,8 @@ export default {
   name: 'App',
   components: {
     Header,
-    Contents,
-    Input
+    Input,
+    Contents
   }
 }
 </script>
@@ -30,6 +30,6 @@ export default {
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.08);
 }
 </style>
