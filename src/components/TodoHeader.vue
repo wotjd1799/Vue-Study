@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper">
-    <div class="header">
-      <div class="secondWrapper">
+  <div class="hdWrap">
+    <div class="hd">
+      <div class="ndHdWrap">
         <div class="week">{{week}},</div>
         <div class="day">{{day}}{{th}}</div>
       </div>
@@ -68,19 +68,19 @@ export default {
 </script>
 
 <style scoped>
-.wrapper {
+.hdWrap {
   width:100%;
-  height: 150px;
+  height: 149px;
   border-bottom: solid 1px rgb(190, 190, 190);
   border-start-start-radius: 10px;
   border-start-end-radius: 10px;
   background-color: rgba(245, 255, 245, 0.822);
 }
-.secondWrapper {
+.ndHdWrap {
   display: flex;
   width: 230px;
 }
-.header {
+.hd {
   display: flex;
   padding-top: 40px;
   padding-left: 40px;
